@@ -1,0 +1,16 @@
+.foods-table{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+        .food-name{
+            grid-column: 1;
+        }
+        .exp-date{
+            grid-column: 2;
+        }
+        .delete-btn{
+            grid-column: 3;
+        }
+
+}

@@ -1,0 +1,19 @@
+.intro-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    text-align: justify;
+}
+
+.intro-headers{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+p{
+    font-size: 1.5rem;
+}
