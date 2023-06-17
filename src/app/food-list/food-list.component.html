@@ -18,4 +18,12 @@
        value= "2023-01-01"
        min="2020-01-01" #newDate>
     <button (click)="addFood(newFood.value,newDate.valueAsDate)">Add Food</button>
+
+    <div>
+      <h3>Search in the DB:</h3>
+      <input type="text" placeholder="enter food name..." #foodToSearch>
+      <button (click)="searchFood(foodToSearch.value)">Search</button>
+    </div>
+
+    <div>{{searchResult}}</div>
 </div>
