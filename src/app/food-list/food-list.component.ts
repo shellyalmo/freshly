@@ -15,7 +15,8 @@ export class FoodListComponent {
     { foodItemId: crypto.randomUUID(), foodItemName: 'instant noodles', expirationDate: new Date('2023-12-31') },
   ]
 
-  public searchResult: string =""
+  public foodCategory: string=""
+  public daysFridgeAfterPurchase: string =""
 
   constructor(private http: HttpClient){}
 
@@ -37,7 +38,9 @@ export class FoodListComponent {
 
     this.http.get<any[]>(url, { params: queryParams })
     .subscribe((data: any[]) => {
-      this.searchResult = JSON.stringify(data[0]);
+      this.foodCategory = JSON.stringify(data[0].category_name_display_only)
+      this.daysFridgeAfterPurchase = JSON.stringify(data[0].from_date_of_purchase_refrigerate_output_display_only,
+      );
     })
   }
 }

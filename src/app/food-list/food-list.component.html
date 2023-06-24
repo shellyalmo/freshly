@@ -25,5 +25,9 @@
       <button (click)="searchFood(foodToSearch.value)">Search</button>
     </div>
 
-    <div>{{searchResult}}</div>
+    <div>
+      <h3>Search Results:</h3>
+      <p *ngIf="foodCategory"><strong>Food Category: </strong>{{foodCategory}}</p>
+      <p *ngIf="daysFridgeAfterPurchase"><strong>Keep in fridge after purchase: </strong>{{daysFridgeAfterPurchase}}</p>
+    </div>
 </div>
