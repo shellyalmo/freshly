@@ -32,13 +32,12 @@ export class FoodListComponent {
   }
 
   public searchFood(foodToSearch: string){
-    foodToSearch=foodToSearch.charAt(0).toUpperCase()+foodToSearch.slice(1);
-    const queryParams = new HttpParams().set('name',foodToSearch);
+    const queryParams = new HttpParams().set('q',foodToSearch);
     const url = 'http://localhost:3000/product_data';
 
     this.http.get<any[]>(url, { params: queryParams })
     .subscribe((data: any[]) => {
-      this.searchResult = data[0].refrigerate_after_opening_output_display_only;
+      this.searchResult = JSON.stringify(data[0]);
     })
   }
 }
