@@ -19,15 +19,8 @@
        min="2020-01-01" #newDate>
     <button (click)="addFood(newFood.value,newDate.valueAsDate)">Add Food</button>
 
-    <div>
-      <h3>Search in the DB:</h3>
-      <input type="text" placeholder="enter food name..." #foodToSearch>
-      <button (click)="searchFood(foodToSearch.value)">Search</button>
-    </div>
+    <app-food-search></app-food-search>
 
-    <div>
-      <h3>Search Results:</h3>
-      <p *ngIf="foodCategory"><strong>Food Category: </strong>{{foodCategory}}</p>
-      <p *ngIf="daysFridgeAfterPurchase"><strong>Keep in fridge after purchase: </strong>{{daysFridgeAfterPurchase}}</p>
-    </div>
+
+
 </div>

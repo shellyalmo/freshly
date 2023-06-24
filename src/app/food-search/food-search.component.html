@@ -1,0 +1,31 @@
+<div>
+  <h3>Search in the DB:</h3>
+  <input type="text" placeholder="enter food name..." #foodToSearch>
+  <button (click)="searchFood(foodToSearch.value)">Search</button>
+
+  <h3>Search Results for {{foodToSearch.value}}:</h3>
+  <div *ngFor="let foodResult of foodSearchResults">
+    <p *ngIf="foodResult.foodCategory">
+      <strong>Food Category: </strong>{{foodResult.foodCategory}}
+    </p>
+    <p *ngIf="foodResult.foodName">
+      <strong>Food Name: </strong>{{foodResult.foodName}}
+    </p>
+    <details *ngIf="foodResult.fridgeAfterPurchase">
+      <summary>Keep in fridge after purchase: </summary>
+      <p>{{foodResult.fridgeAfterPurchase}}</p>
+    </details>
+    <details *ngIf="foodResult.freezeAfterPurchase">
+      <summary>Keep in freezer after purchase: </summary>
+      <p>{{foodResult.freezeAfterPurchase}}</p>
+    </details>
+    <details *ngIf="foodResult.fridgeAfterOpening">
+      <summary>Keep in fridge after opening: </summary>
+      <p>{{foodResult.fridgeAfterOpening}}</p>
+    </details>
+    <details *ngIf="foodResult.pantryTips">
+      <summary>Pantry tips: </summary>
+      <p>{{foodResult.pantryTips}}</p>
+    </details>
+  </div>
+</div>
